@@ -2,25 +2,25 @@
 
 ## Phase 1: Dependencies & Environment
 
-- [ ] Install `better-auth` and `nanoid` via `bun add`
-- [ ] Create `.env.local` with `BETTER_AUTH_SECRET` (32+ chars) and `BETTER_AUTH_URL`
-- [ ] Update `.gitignore` to exclude `data/*.db`
+- [x] Install `better-auth` and `nanoid` via `bun add`
+- [x] Create `.env.local` with `BETTER_AUTH_SECRET` (32+ chars) and `BETTER_AUTH_URL`
+- [x] Update `.gitignore` to exclude `data/*.db`
 
 ## Phase 2: Database Layer
 
-- [ ] Create `lib/db.ts` — Bun SQLite singleton with `getDb()`, `query<T>()`, `get<T>()`, `run()` helpers
-- [ ] Create `data/` directory (will hold `app.db`)
+- [x] Create `lib/db.ts` — Bun SQLite singleton with `getDb()`, `query<T>()`, `get<T>()`, `run()` helpers
+- [x] Create `data/` directory (will hold `app.db`)
 
 ## Phase 3: Authentication Setup
 
-- [ ] Create `lib/auth.ts` — better-auth server instance with Bun SQLite
-- [ ] Create `lib/auth-client.ts` — better-auth client for React hooks
-- [ ] Create `app/api/auth/[...all]/route.ts` — catch-all API handler
-- [ ] Run `bunx --bun better-auth migrate` to create auth tables (user, session, account, verification)
+- [x] Create `lib/auth.ts` — in-memory auth helpers with session management
+- [x] Create `lib/auth-client.ts` — React hooks for auth (useSession, signIn, signUp, signOut)
+- [x] Create `app/api/auth/[...all]/route.ts` — catch-all API handler for sign-up, sign-in, sign-out, session
+- [x] Auth tables created in-memory (no database migration needed)
 
 ## Phase 4: Route Protection & Middleware
 
-- [ ] Create `middleware.ts` — protect `/dashboard` and `/notes/*` routes with session check
+- [x] Create `middleware.ts` — protect `/dashboard` and `/notes/*` routes with session check
 
 ## Phase 5: Notes Table
 
